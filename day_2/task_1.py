@@ -4,7 +4,6 @@ with open('input.txt') as f:
     lines = [l.strip() for l in f.readlines()]
 
 counts = Counter(lines)
-keys = counts.keys()
 
 LOSS, DRAW, WIN = 0, 3, 6
 
