@@ -18,10 +18,6 @@ for group in [lines[n:n+group_size] for n in range(0, len(lines), group_size)]:
     for c in same_chars:
 
         position = a_z.index(c.lower())
-
-        if c.isupper():
-            duplicates += A + position
-        else:
-            duplicates += a + position
+        duplicates += A + position if c.isupper() else a + position
 
 print(f"Total: {duplicates}")
