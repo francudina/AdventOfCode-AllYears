@@ -4,9 +4,8 @@
 
 **Learning by playing around with programming languages.**
 
-Official game site: https://adventofcode.com 
+Official game site: https://adventofcode.com
 
----
 
 ## Testing Scripts
 
