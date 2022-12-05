@@ -25,3 +25,6 @@ Official game site: https://adventofcode.com
 ### Day 4
 - R [setup](https://cran.r-project.org )
 - Testing: `Rscript task_*.R` where `*` is `1` or `2`.
+
+### Day 5
+- See [Day 1](#day-1)
