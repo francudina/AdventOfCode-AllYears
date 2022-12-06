@@ -28,3 +28,6 @@ Official game site: https://adventofcode.com
 
 ### Day 5
 - See [Day 1](#day-1)
+
+### Day 6
+- See [Day 1](#day-1)
