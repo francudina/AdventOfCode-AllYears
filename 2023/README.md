@@ -1,4 +1,4 @@
-# Advent of Code (All Years)
+# Advent of Code 2023
 
 ## About
 
@@ -7,7 +7,6 @@
 Official game site: https://adventofcode.com
 
 
-## Years
+## Testing Scripts + Setup
 
-- [2022](./2022)
-- [2023](./2023)
+### todo: add language
