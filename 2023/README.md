@@ -9,4 +9,5 @@ Official game site: https://adventofcode.com
 
 ## Testing Scripts + Setup
 
-### todo: add language
+### C
+- todo
