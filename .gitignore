@@ -1,5 +1,6 @@
 **/.idea
 **/.DS_Store
 **/*.dSYM
-task*
-main*
+task_1
+task_2
+main
