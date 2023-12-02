@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-#include "../common/structures.h"
+#include "../common/methods.h"
 
 int find_color_value(char *set, char *color) {
     // find substring

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-#include "../common/structures.h"
+#include "../common/methods.h"
 
 #define RED_MAX 12
 #define GREEN_MAX 13
@@ -17,7 +17,9 @@ int find_color_value(char *set, char *color) {
     long position = res - set;
     // find value
     char *val = substring_from_with_len(set, position-3, 2);
-    return atoi(val);
+    int v = atoi(val);
+    free(val);
+    return v;
 }
 
 int main() {
@@ -59,6 +61,8 @@ int main() {
         // start after "Game " prefix, and max 3 chars
         char *id = substring_from_with_len(id_part, 5, 3);
         total += atoi(id);
+
+        free(id);
     }
 
     printf("Result: %d\n", total);
