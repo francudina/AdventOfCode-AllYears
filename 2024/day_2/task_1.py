@@ -24,4 +24,4 @@ def scan(line: []) -> int:
 if __name__ == '__main__':
 
     rez = sum(scan(l) for l in read())
-    print(f'\nResult: {rez}')
+    print(f'Result: {rez}')

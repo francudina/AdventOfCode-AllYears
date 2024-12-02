@@ -13,4 +13,4 @@ for l in read():
             rez += 1
             break
 
-print(f'\nResult: {rez}')
+print(f'Result: {rez}')
