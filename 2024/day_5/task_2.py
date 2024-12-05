@@ -21,7 +21,7 @@ def _check(u: []) -> int:
                 swapped = True
         if not swapped:
             break
-    return int(valid[int(len(u) / 2)]) if valid != u else 0
+    return int(valid[int(len(u)/2)]) if valid != u else 0
 
 
 rez = 0
