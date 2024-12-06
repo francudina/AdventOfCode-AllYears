@@ -1,7 +1,7 @@
 from task_1 import *
 
 
-def next_2(area: [], c: (), s: (), o: () = None, log: bool = False) -> (int, set):
+def next_turns(area: [], c: (), s: (), o: () = None, log: bool = False) -> (int, set):
     n, turns = (c[0], c[1]), set()
     wall = False
     while True:
@@ -14,7 +14,6 @@ def next_2(area: [], c: (), s: (), o: () = None, log: bool = False) -> (int, set
 
         n = (i, j)
         area[i][j] = 'X'
-
         turns.add((n, s))
 
     if log:
@@ -30,7 +29,7 @@ def check_obstacle(init: (), obstacle: () = None) -> bool:
     area[obstacle[0]][obstacle[1]] = 'O'
     while True:
         visited.add((current, steps[s_ind]))
-        current, turns, wall = next_2(area=area, c=current, s=steps[s_ind], o=obstacle, log=False)
+        current, turns, wall = next_turns(area=area, c=current, s=steps[s_ind], o=obstacle, log=False)
 
         if wall:
             return False
@@ -45,7 +44,7 @@ def check_obstacle(init: (), obstacle: () = None) -> bool:
 options = next_path(init=position)
 
 rez = 0
-for o in options:
-    rez += int(check_obstacle(init=position, obstacle=o))
+for obstacle in options:
+    rez += int(check_obstacle(init=position, obstacle=obstacle))
 
 print(f'Result: {rez}')
