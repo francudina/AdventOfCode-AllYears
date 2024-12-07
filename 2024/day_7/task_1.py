@@ -6,11 +6,11 @@ def _read() -> []:
         return [l.strip().split(':') for l in f.readlines()]
 
 
-def combinations(n: int, values: []) -> []:
+def _combinations(n: int, values: []) -> []:
     return [list(c) for c in product(values, repeat=n)]
 
 
-def combine(operators: [], pairs: []) -> int:
+def _combine(operators: [], pairs: []) -> int:
     r = int(pairs[0])
     for i in range(len(operators)):
         if operators[i] == '+':
@@ -27,8 +27,8 @@ def run(operators: []):
     for l in _read():
         left, right = int(l[0]), l[1].strip().split()
 
-        for o in combinations(n=len(right) - 1, values=operators):
-            comb: int = combine(operators=o, pairs=right)
+        for o in _combinations(n=len(right) - 1, values=operators):
+            comb: int = _combine(operators=o, pairs=right)
             if left == comb:
                 rez += left
                 break
