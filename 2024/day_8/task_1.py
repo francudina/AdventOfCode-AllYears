@@ -40,15 +40,12 @@ def valid(x: (), visited: set) -> bool:
 if __name__ == '__main__':
 
     antinodes = set()
-    for antenna, locations in places().items():
-        pairs: [] = combinations(values=locations)
-
-        for a1, a2 in pairs:
+    for _, locations in places().items():
+        for a1, a2 in combinations(values=locations):
             dist1, dist2 = p_dist(x=a1, y=a2), p_dist(x=a2, y=a1)
             an1, an2 = next_an(x=a1, dist=dist1), next_an(x=a2, dist=dist2)
 
             valid(x=an1, visited=antinodes)
             valid(x=an2, visited=antinodes)
 
-    rez = len(antinodes)
-    print(f'Result: {rez}')
+    print(f'Result: {len(antinodes)}')

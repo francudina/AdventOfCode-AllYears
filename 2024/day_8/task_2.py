@@ -1,10 +1,8 @@
 from task_1 import next_an, p_dist, valid, places, combinations
 
 antinodes, antennas = set(), set()
-for antenna, locations in places().items():
-    pairs: [] = combinations(values=locations)
-
-    for a1, a2 in pairs:
+for _, locations in places().items():
+    for a1, a2 in combinations(values=locations):
         antennas.add(a1), antennas.add(a2)
 
         dist1, dist2 = p_dist(x=a1, y=a2), p_dist(x=a2, y=a1)
