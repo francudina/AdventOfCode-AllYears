@@ -13,7 +13,6 @@ directions = {
     'U': (-1, 0),
     'D': (1, 0)
 }
-visited = set()
 
 
 def _valid(x: (), n: ()) -> bool:
@@ -55,4 +54,5 @@ def _test(z: (), x: ()) -> bool:
 
 
 if __name__ == '__main__':
+    visited = set()
     run(test=_test)
