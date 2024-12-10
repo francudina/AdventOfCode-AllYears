@@ -1,3 +1,5 @@
+from typing import Callable
+
 with open('input.txt') as f:
     lines = [[int(c) for c in line.strip()] for line in f]
 
@@ -31,30 +33,26 @@ def _all_next(x: ()) -> []:
     return steps
 
 
-def _iter_next(z: (), x: (), depth: int) -> int:
-
-    print(f'{depth*" "}{lines[x[0]][x[1]]}')
-
+def _iter_next(z: (), x: (), depth: int, test: Callable) -> int:
     if lines[x[0]][x[1]] == 9:
-        p = (z, x)
-        if p in visited:
-            return 0
-        visited.add(p)
-        return 1
+        return int(test(z=z, x=x))
 
-    total = 0
-    for s, n in _all_next(x=x).items():
-
-        total += _iter_next(z=z, x=n, depth=depth+1)
-
-    return total
+    return sum(_iter_next(z=z, x=n, depth=depth+1, test=test)
+               for s, n in _all_next(x=x).items())
 
 
-rez = 0
-for p in zeros:
-    trailheads: int = _iter_next(z=p, x=p, depth=0)
-    print(f'z: {p}, total: {trailheads}')
-    rez += trailheads
+def run(test: Callable):
+    rez = sum(_iter_next(z=p, x=p, depth=0, test=test)
+              for p in zeros)
+    print(f'\nResult: {rez}')
 
 
-print(f'\nResult: {rez}')
+def _test(z: (), x: ()) -> bool:
+    if (z, x) in visited:
+        return False
+    visited.add((z, x))
+    return True
+
+
+if __name__ == '__main__':
+    run(test=_test)
