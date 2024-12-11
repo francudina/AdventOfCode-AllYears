@@ -18,7 +18,7 @@ def _split(stone: int) -> []:
 
 
 @cache
-def stone_split(stone: int, blink: int) -> []:
+def stone_split(stone: int, blink: int) -> int:
     if blink == 0:
         return 1
     total = 0
@@ -28,12 +28,9 @@ def stone_split(stone: int, blink: int) -> []:
 
 
 def run(blink: int):
-    rez = 0
-    for stone in stones:
-        rez += stone_split(stone=stone, blink=blink)
+    rez = sum([stone_split(stone=stone, blink=blink) for stone in stones])
     print(f'Result: {rez}')
 
 
 if __name__ == '__main__':
-
     run(blink=25)
