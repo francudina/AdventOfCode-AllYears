@@ -1,3 +1,4 @@
+from typing import Callable
 from collections import defaultdict
 
 
@@ -45,8 +46,7 @@ def _neighborhood(r: (), x: ()) -> int:
     return b
 
 
-if __name__ == '__main__':
-
+def run(edges: Callable):
     rez = 0
     for i in range(rows):
         for j in range(cols):
@@ -56,6 +56,15 @@ if __name__ == '__main__':
                 continue
 
             b = _neighborhood(r=x, x=x)
-            rez += len(nodes[x]) * b
+            rez += len(nodes[x]) * edges(x, b)
 
     print(f'Result: {rez}')
+
+
+def _sides(x: (), sides: int) -> int:
+    return sides
+
+
+if __name__ == '__main__':
+
+    run(edges=_sides)
