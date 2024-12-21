@@ -57,4 +57,4 @@ def run(cheat_size: int) -> int:
 
 if __name__ == '__main__':
 
-    print(f'Result: {run(2)}')
+    print(f'Result: {run(cheat_size=2)}')
