@@ -11,10 +11,10 @@ for f, s in lines:
     sets[s].add(f)
 
 
-tripplets = list(combinations(sets.keys(), 3))
+triplets = list(combinations(sets.keys(), 3))
 
 groups = set()
-for cluster in tripplets:
+for cluster in triplets:
 
     if not any(n.startswith('t') for n in cluster):
         continue

@@ -13,7 +13,6 @@ for f, s in lines:
 
 @cache
 def _largest(nodes: frozenset) -> frozenset:
-
     connected = frozenset()
     for node in nodes:
 
